@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GestiónYa PY — Tu negocio digital en 48 horas</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--v:#00C170;--vd:#009955;--vl:rgba(0,193,112,0.1);--n:#0A0A0A;--g:#141414;--g2:#1E1E1E;--g3:#2A2A2A;--t:#E8E8E8;--s:#777;--w:#FFFFFF;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--n);color:var(--t);overflow-x:hidden;}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,193,112,0.12);}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.35rem;color:var(--w);}
+.logo span{color:var(--v);}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{color:var(--s);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--v);}
+.nav-cta{background:var(--v)!important;color:#000!important;padding:9px 20px;border-radius:7px;font-weight:700!important;}
+.nav-cta:hover{background:var(--vd)!important;}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;}
+.hero::before{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,193,112,0.1) 0%,transparent 70%);pointer-events:none;}
+.badge{display:inline-block;background:var(--vl);border:1px solid rgba(0,193,112,0.3);color:var(--v);padding:6px 16px;border-radius:100px;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;animation:fadeUp 0.6s ease both;}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:22px;animation:fadeUp 0.6s 0.1s ease both;}
+.hero h1 em{color:var(--v);font-style:normal;}
+.hero p{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--s);max-width:540px;margin:0 auto 36px;line-height:1.7;animation:fadeUp 0.6s 0.2s ease both;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both;}
+.btn-p{background:var(--v);color:#000;padding:15px 34px;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{background:var(--vd);transform:translateY(-2px);}
+.btn-s{background:transparent;color:var(--t);padding:15px 34px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1px solid var(--g3);transition:all 0.2s;}
+.btn-s:hover{border-color:var(--v);color:var(--v);}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--g3);border-bottom:1px solid var(--g3);}
+.stat{flex:1;min-width:160px;padding:44px 20px;text-align:center;border-right:1px solid var(--g3);}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:var(--v);line-height:1;margin-bottom:6px;}
+.stat-l{color:var(--s);font-size:0.85rem;}
+section{padding:96px 24px;}
+.container{max-width:1080px;margin:0 auto;}
+.stag{font-size:0.7rem;font-weight:700;color:var(--v);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.stitle{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-1px;margin-bottom:18px;}
+.ssub{color:var(--s);font-size:1rem;line-height:1.7;max-width:480px;}
+.problema{background:var(--g);}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.prob-items{display:flex;flex-direction:column;gap:14px;margin-top:36px;}
+.prob-item{display:flex;gap:14px;align-items:flex-start;padding:18px;background:var(--n);border-radius:10px;border:1px solid var(--g3);}
+.prob-ico{font-size:1.3rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--vl);border-radius:8px;flex-shrink:0;}
+.prob-item h4{font-weight:600;font-size:0.9rem;margin-bottom:3px;}
+.prob-item p{color:var(--s);font-size:0.82rem;line-height:1.5;}
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
+.paso{padding:30px;background:var(--g);border-radius:12px;border:1px solid var(--g3);transition:border-color 0.2s;}
+.paso:hover{border-color:var(--v);}
+.paso-n{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:rgba(0,193,112,0.15);line-height:1;margin-bottom:14px;}
+.paso h3{font-family:'Syne',sans-serif;font-weight:700;margin-bottom:9px;font-size:1.05rem;}
+.paso p{color:var(--s);font-size:0.88rem;line-height:1.6;}
+.planes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:start;}
+.plan{padding:34px 26px;background:var(--g);border-radius:14px;border:1px solid var(--g3);transition:all 0.2s;position:relative;}
+.plan:hover{transform:translateY(-4px);border-color:rgba(0,193,112,0.3);}
+.plan.best{border-color:var(--v);background:rgba(0,193,112,0.04);}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--v);color:#000;padding:4px 16px;border-radius:100px;font-size:0.72rem;font-weight:800;white-space:nowrap;}
+.plan-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:6px;}
+.plan-price{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--v);line-height:1;margin-bottom:3px;}
+.plan-price span{font-size:0.9rem;color:var(--s);font-family:'DM Sans',sans-serif;font-weight:400;}
+.plan-mes{color:var(--s);font-size:0.82rem;margin-bottom:26px;}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:26px;}
+.plan-feats li{display:flex;gap:9px;align-items:flex-start;font-size:0.87rem;color:var(--s);}
+.plan-feats li::before{content:'✓';color:var(--v);font-weight:700;flex-shrink:0;}
+.plan-btn{display:block;text-align:center;padding:13px;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.2s;}
+.plan-btn-o{border:1px solid var(--g3);color:var(--t);}
+.plan-btn-o:hover{border-color:var(--v);color:var(--v);}
+.plan-btn-f{background:var(--v);color:#000;}
+.plan-btn-f:hover{background:var(--vd);}
+.oferta-box{background:linear-gradient(135deg,rgba(0,193,112,0.07),rgba(0,153,85,0.03));border:1px solid rgba(0,193,112,0.28);border-radius:20px;padding:64px;text-align:center;}
+.oferta-box h2{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:800;margin-bottom:18px;letter-spacing:-1px;}
+.oferta-box h2 em{color:var(--v);font-style:normal;}
+.oferta-box p{color:var(--s);font-size:1rem;max-width:500px;margin:0 auto 32px;line-height:1.7;}
+.garantias{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.garantia{display:flex;align-items:center;gap:8px;font-size:0.88rem;font-weight:500;}
+.garantia-ico{color:var(--v);}
+.rubros-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:13px;margin-top:48px;}
+.rubro{background:var(--g2);border:1px solid var(--g3);border-radius:10px;padding:17px;display:flex;align-items:center;gap:12px;transition:all 0.2s;}
+.rubro:hover{border-color:var(--v);background:var(--vl);}
+.rubro-ico{font-size:1.3rem;}
+.rubro-text{font-size:0.87rem;font-weight:500;}
+footer{background:var(--g);border-top:1px solid var(--g3);padding:56px 24px 36px;text-align:center;}
+.footer-logo{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:10px;}
+.footer-logo span{color:var(--v);}
+footer p{color:var(--s);font-size:0.88rem;margin-bottom:28px;}
+.footer-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.footer-links a{color:var(--s);text-decoration:none;font-size:0.88rem;transition:color 0.2s;}
+.footer-links a:hover{color:var(--v);}
+.footer-bottom{color:#444;font-size:0.78rem;border-top:1px solid var(--g3);padding-top:22px;margin-top:22px;}
+.wa-float{position:fixed;bottom:26px;right:26px;background:#25D366;color:white;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:99;transition:transform 0.2s;}
+.wa-float:hover{transform:scale(1.1);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:768px){nav{padding:14px 18px;}.nav-links a:not(.nav-cta){display:none;}.prob-grid,.pasos,.planes-grid{grid-template-columns:1fr;}.oferta-box{padding:36px 22px;}.garantias{flex-direction:column;align-items:center;}.stat{min-width:140px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Gestión<span>Ya</span> PY</div>
+  <div class="nav-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#planes">Planes</a>
+    <a href="#rubros">Rubros</a>
+    <a href="https://wa.me/595981669855?text=Hola%2C+quiero+saber+más+sobre+GestiónYa+PY" class="nav-cta">Quiero mi sistema →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="badge">🇵🇾 Hecho para PyMEs paraguayas</div>
+    <h1>Tu negocio<br><em>ordenado y digital</em><br>en 48 horas</h1>
+    <p>Controlá trabajos, cobros y gastos desde el celular. Sin software caro, sin complicaciones. Funciona con Google Sheets.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/595981669855?text=Hola%2C+quiero+probar+GestiónYa+PY+gratis" class="btn-p">📱 Quiero probarlo gratis</a>
+      <a href="#como-funciona" class="btn-s">Ver cómo funciona</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">48hs</div><div class="stat-l">Tu sistema funcionando</div></div>
+  <div class="stat"><div class="stat-n">30</div><div class="stat-l">Días gratis para probar</div></div>
+  <div class="stat"><div class="stat-n">Gs.0</div><div class="stat-l">Si no te sirve, no pagás</div></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Desde el celular</div></div>
+</div>
+
+<section class="problema">
+  <div class="container">
+    <div class="prob-grid">
+      <div>
+        <div class="stag">El problema</div>
+        <h2 class="stitle">¿Tu negocio sigue funcionando así?</h2>
+        <p class="ssub">La mayoría de las PyMEs en Paraguay pierden plata por falta de orden, no por falta de trabajo.</p>
+      </div>
+      <div class="prob-items">
+        <div class="prob-item"><div class="prob-ico">📋</div><div><h4>Anotás en papel o cuaderno</h4><p>Después no sabés cuánto te deben, quién pagó o qué pedido está pendiente.</p></div></div>
+        <div class="prob-item"><div class="prob-ico">💸</div><div><h4>Los créditos se pierden</h4><p>Clientes que pagaron parte y nunca terminaron. Plata que desaparece.</p></div></div>
+        <div class="prob-item"><div class="prob-ico">📊</div><div><h4>No sabés cuánto ganaste hoy</h4><p>El cierre del día es un caos. Sin registro claro de gastos ni entradas.</p></div></div>
+        <div class="prob-item"><div class="prob-ico">💻</div><div><h4>El software caro no es para vos</h4><p>Los sistemas de gestión cuestan una fortuna y son difíciles de usar.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="container">
+    <div class="stag">La solución</div>
+    <h2 class="stitle">Simple, rápido y desde el celular</h2>
+    <p class="ssub">Te armamos un sistema a medida. Tus encargados lo usan desde el celular con formularios simples.</p>
+    <div class="pasos">
+      <div class="paso"><div class="paso-n">01</div><h3>Registrá cada trabajo</h3><p>El encargado llena un formulario simple cuando entra un pedido. Contado o crédito, queda registrado al instante.</p></div>
+      <div class="paso"><div class="paso-n">02</div><h3>Controlá los créditos</h3><p>Los trabajos a crédito aparecen automáticamente en la lista de pendientes. Sabés quién te debe y cuánto.</p></div>
+      <div class="paso"><div class="paso-n">03</div><h3>Cerrá el día en minutos</h3><p>El encargado registra cobros y gastos al cerrar. Vos ves el resumen completo desde donde estés.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="planes" style="background:var(--g);">
+  <div class="container">
+    <div class="stag">Precios</div>
+    <h2 class="stitle">Elegí tu plan</h2>
+    <p class="ssub">Sin contratos. Cancelás cuando querás. Primeros 30 días gratis en todos los planes.</p>
+    <div class="planes-grid">
+      <div class="plan">
+        <div class="plan-name">Básico</div>
+        <div class="plan-price">350.000 <span>Gs.</span></div>
+        <div class="plan-mes">+ Gs. 150.000 / mes</div>
+        <ul class="plan-feats">
+          <li>Google Sheets personalizado</li>
+          <li>1 formulario de trabajos</li>
+          <li>1 formulario de cierre diario</li>
+          <li>Control de créditos</li>
+          <li>Capacitación por WhatsApp</li>
+          <li>1 mes de soporte incluido</li>
+        </ul>
+        <a href="https://wa.me/595981669855?text=Hola%2C+me+interesa+el+Plan+Básico" class="plan-btn plan-btn-o">Consultar →</a>
+      </div>
+      <div class="plan best">
+        <div class="plan-badge">⭐ MÁS POPULAR</div>
+        <div class="plan-name">Completo</div>
+        <div class="plan-price">700.000 <span>Gs.</span></div>
+        <div class="plan-mes">+ Gs. 200.000 / mes</div>
+        <ul class="plan-feats">
+          <li>Todo lo del plan Básico</li>
+          <li>Hasta 2 líneas de trabajo</li>
+          <li>Dashboard con gráficos</li>
+          <li>Control avanzado de créditos</li>
+          <li>Registro detallado de gastos</li>
+          <li>Capacitación presencial o remota</li>
+          <li>2 meses de soporte incluido</li>
+        </ul>
+        <a href="https://wa.me/595981669855?text=Hola%2C+me+interesa+el+Plan+Completo" class="plan-btn plan-btn-f">Quiero este plan →</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">1.200.000 <span>Gs.</span></div>
+        <div class="plan-mes">+ Gs. 300.000 / mes</div>
+        <ul class="plan-feats">
+          <li>Todo lo del plan Completo</li>
+          <li>Hasta 3 líneas de trabajo</li>
+          <li>PDF automático de presupuesto</li>
+          <li>Alertas automáticas de créditos</li>
+          <li>Notificación por WhatsApp</li>
+          <li>Adaptación 100% al rubro</li>
+          <li>Soporte prioritario permanente</li>
+        </ul>
+        <a href="https://wa.me/595981669855?text=Hola%2C+me+interesa+el+Plan+Pro" class="plan-btn plan-btn-o">Consultar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="oferta-box">
+      <h2>Probalo <em>30 días gratis.</em><br>Si no te sirve, no pagás nada.</h2>
+      <p>Te armamos el sistema completo para tu negocio. Lo usás un mes sin pagar. Si no te ordena el negocio, no te cobramos.</p>
+      <div class="garantias">
+        <div class="garantia"><span class="garantia-ico">✓</span> Sin contrato</div>
+        <div class="garantia"><span class="garantia-ico">✓</span> Cancelás cuando querás</div>
+        <div class="garantia"><span class="garantia-ico">✓</span> Listo en 48 horas</div>
+        <div class="garantia"><span class="garantia-ico">✓</span> Soporte por WhatsApp</div>
+      </div>
+      <a href="https://wa.me/595981669855?text=Hola%2C+quiero+empezar+gratis+con+GestiónYa+PY" class="btn-p" style="font-size:1.05rem;padding:17px 42px;">📱 Empezar gratis ahora</a>
+    </div>
+  </div>
+</section>
+
+<section id="rubros" style="background:var(--g);">
+  <div class="container">
+    <div class="stag">¿Para quién es?</div>
+    <h2 class="stitle">Para cualquier negocio que tenga trabajos, cobros y gastos</h2>
+    <div class="rubros-grid">
+      <div class="rubro"><div class="rubro-ico">🔩</div><div class="rubro-text">Metalúrgicas</div></div>
+      <div class="rubro"><div class="rubro-ico">⚙️</div><div class="rubro-text">Tornería</div></div>
+      <div class="rubro"><div class="rubro-ico">🪵</div><div class="rubro-text">Carpintería</div></div>
+      <div class="rubro"><div class="rubro-ico">🖨️</div><div class="rubro-text">Imprentas</div></div>
+      <div class="rubro"><div class="rubro-ico">✂️</div><div class="rubro-text">Peluquerías</div></div>
+      <div class="rubro"><div class="rubro-ico">💈</div><div class="rubro-text">Barberías</div></div>
+      <div class="rubro"><div class="rubro-ico">💆</div><div class="rubro-text">Spa y estética</div></div>
+      <div class="rubro"><div class="rubro-ico">💪</div><div class="rubro-text">Gimnasios</div></div>
+      <div class="rubro"><div class="rubro-ico">🍽️</div><div class="rubro-text">Restaurantes</div></div>
+      <div class="rubro"><div class="rubro-ico">🪑</div><div class="rubro-text">Mueblerías</div></div>
+      <div class="rubro"><div class="rubro-ico">🔥</div><div class="rubro-text">Soldadura</div></div>
+      <div class="rubro"><div class="rubro-ico">🛒</div><div class="rubro-text">Despensas</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Gestión<span>Ya</span> PY</div>
+  <p>Sistemas digitales para PyMEs paraguayas.<br>Simples, rápidos y sin software caro.</p>
+  <div class="footer-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#planes">Planes</a>
+    <a href="https://wa.me/595981669855">WhatsApp</a>
+    <a href="/cdn-cgi/l/email-protection#fa9d9f898e939594839b8a83ba9d979b9396d4999597"><span class="__cf_email__" data-cfemail="1c7b796f68757372657d6c655c7b717d7570327f7371">[email&#160;protected]</span></a>
+    <a href="https://instagram.com/gestionyapy">@gestionyapy</a>
+  </div>
+  <div class="footer-bottom">© 2025 GestiónYa PY · Todos los derechos reservados</
